@@ -1,0 +1,80 @@
+# RovoAPI - AI API Gateway
+
+## Overview
+RovoAPI is an enterprise-grade AI API gateway platform designed for quantitative traders and automation teams. It provides intelligent routing, multi-model access, and real-time analytics through a unified interface.
+
+## Website
+- **URL**: https://rovoapi.com
+- **Support Email**: support@rovoapi.com
+
+## Core Models
+
+### rovo-turbo
+- Fast, cost-effective model for standard tasks
+- Available on all plans
+- Optimized for quick responses
+
+### rovo-quantum
+- Advanced model for complex reasoning tasks
+- Available on Pro and Pro Annual plans
+- Higher capability for demanding workloads
+
+## Features
+
+1. **Multi-Model Access**: Single API endpoint to access multiple AI models
+2. **Intelligent Routing**: Automatic model selection based on task requirements
+3. **OpenAI Compatible**: Drop-in replacement for OpenAI API with zero code changes
+4. **Real-time Analytics**: Monitor usage, costs, and performance metrics
+5. **Usage Management**: Track and control API consumption
+
+## API Endpoints
+
+- **API Base URL**: https://api.rovoapi.com
+- **Documentation**: https://api.rovoapi.com/doc
+- **Dashboard**: https://api.rovoapi.com
+
+## Pricing Plans
+
+### Starter (Free)
+- 20 requests/day
+- rovo-turbo model
+- Standard routing
+- Basic analytics
+
+### Pro ($9.9/month)
+- 1,000 requests/day
+- All models (rovo-turbo & rovo-quantum)
+- Priority routing
+- Advanced analytics
+- Email support
+- Early Access pricing locked
+
+### Pro Annual ($99/year)
+- Everything in Pro
+- Lock early access price forever
+- Priority support
+- Early access to new models
+- Save 58% vs monthly
+
+## Target Audience
+- Quantitative traders
+- Automation teams
+- Developers building AI-powered applications
+- Businesses requiring reliable AI API access
+
+## Technology
+- OpenAI-compatible API interface
+- Intelligent routing engine
+- Real-time usage tracking
+- Secure authentication
+
+## Legal
+
+### Privacy Policy
+RovoAPI collects minimal data (email, usage data) for service provision. API logs are retained for 90 days. No data is sold to third parties. Industry-standard encryption is used for data protection.
+
+### Terms of Service
+The service is provided "as is." Users must comply with applicable laws, avoid abuse, and not resell API access. Pro plan fees are non-refundable except as required by law.
+
+## Contact
+- Email: support@rovoapi.com
