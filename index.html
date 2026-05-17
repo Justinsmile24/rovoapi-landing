@@ -3,7 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RovoAPI - Enterprise AI API Gateway</title>
+    <title>RovoAPI - Enterprise AI API Gateway for Quant Traders & Automation Teams</title>
+    <meta name="description" content="RovoAPI is an enterprise-grade AI API gateway with intelligent routing. Connect to rovo-turbo and rovo-quantum models through a unified interface. Perfect for quantitative traders and automation teams.">
+    <meta name="keywords" content="AI API, API gateway, rovo-turbo, rovo-quantum, Quant Traders, Automation, AI routing, OpenAI compatible">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rovoapi.com/">
+    <meta property="og:title" content="RovoAPI - Intelligent AI API Gateway">
+    <meta property="og:description" content="Enterprise-grade AI API gateway with intelligent routing. Connect to all major AI models through a single, unified interface.">
+    <meta property="og:image" content="https://rovoapi.com/og-image.png">
+    <meta property="og:site_name" content="RovoAPI">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RovoAPI - Intelligent AI API Gateway">
+    <meta name="twitter:description" content="Enterprise-grade AI API gateway with intelligent routing for Quant Traders & Automation Teams.">
+    <meta name="twitter:image" content="https://rovoapi.com/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- AI-friendly references -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-friendly version">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RovoAPI",
+        "url": "https://rovoapi.com",
+        "logo": "https://rovoapi.com/logo.png",
+        "description": "Enterprise-grade AI API gateway with intelligent routing for Quant Traders and Automation Teams",
+        "email": "support@rovoapi.com",
+        "sameAs": [
+            "https://twitter.com/rovoapi",
+            "https://github.com/rovoapi"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@rovoapi.com",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RovoAPI",
+        "url": "https://rovoapi.com",
+        "description": "Intelligent AI API Gateway for Quant Traders & Automation Teams",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://api.rovoapi.com?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RovoAPI",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0",
+            "highPrice": "99",
+            "priceCurrency": "USD"
+        },
+        "description": "AI API gateway service with intelligent routing and multi-model support"
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -320,6 +397,7 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
+            cursor: pointer;
         }
 
         .footer-links a:hover {
@@ -339,6 +417,118 @@
         .contact a {
             color: var(--accent-purple);
             text-decoration: none;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: var(--bg-card);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-content {
+            padding: 2rem;
+        }
+
+        .modal-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .modal-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content ul {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-content p.contact-info {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-content p.contact-info a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .modal-content .effective-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 2rem;
         }
 
         /* Mobile Menu */
@@ -393,6 +583,14 @@
             .pricing-card.featured::before {
                 font-size: 0.65rem;
             }
+
+            .modal {
+                max-height: 90vh;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -417,7 +615,7 @@
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </a>
-            <a href="https://api.rovoapi.com/docs" class="btn btn-secondary" target="_blank">
+            <a href="https://api.rovoapi.com/doc" class="btn btn-secondary" target="_blank">
                 View API Docs
             </a>
         </div>
@@ -495,10 +693,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="https://api.rovoapi.com/docs" target="_blank">API Docs</a>
-                <a href="https://status.rovoapi.com" target="_blank">Status</a>
-                <a href="https://rovoapi.com/privacy" target="_blank">Privacy</a>
-                <a href="https://rovoapi.com/terms" target="_blank">Terms</a>
+                <a href="https://api.rovoapi.com/doc" target="_blank">API Docs</a>
+                <a href="#status" onclick="return false;">Status</a>
+                <a onclick="openModal('privacyModal')">Privacy</a>
+                <a onclick="openModal('termsModal')">Terms</a>
             </div>
             <div class="contact">
                 <a href="mailto:support@rovoapi.com">support@rovoapi.com</a>
@@ -509,6 +707,89 @@
         </div>
     </footer>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'privacyModal')">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <h3>Data Collection</h3>
+                <p>We collect only the essential information needed to provide our services, including:</p>
+                <ul>
+                    <li>Email address for account registration and communication</li>
+                    <li>Usage data to improve our service and provide analytics</li>
+                    <li>API call metadata for service optimization</li>
+                </ul>
+
+                <h3>Data Retention</h3>
+                <p>API call logs are retained for 90 days for security and troubleshooting purposes. After this period, logs are automatically deleted from our systems.</p>
+
+                <h3>Data Protection</h3>
+                <p>We implement industry-standard encryption protocols to protect your data during transmission and at rest. Your API keys are stored securely using encrypted storage.</p>
+
+                <h3>Cookies</h3>
+                <p>We use cookies solely for authentication purposes. We do not use tracking cookies or advertising cookies.</p>
+
+                <h3>Data Sharing</h3>
+                <p>We do not sell, trade, or otherwise transfer your personal information to third parties. Your data is used exclusively for providing and improving RovoAPI services.</p>
+
+                <h3>Your Rights</h3>
+                <p>You have the right to request deletion of your account and all associated data at any time. Contact us at support@rovoapi.com to exercise this right.</p>
+
+                <h3>Contact Us</h3>
+                <p class="contact-info">For privacy-related inquiries, contact us at <a href="mailto:support@rovoapi.com">support@rovoapi.com</a></p>
+
+                <p class="effective-date">Effective Date: May 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'termsModal')">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Terms of Service</h2>
+                <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <h3>Service Description</h3>
+                <p>RovoAPI provides an AI API gateway service that enables access to various AI models through a unified interface. Our platform offers intelligent routing, usage analytics, and management tools for AI API consumption.</p>
+
+                <h3>User Responsibilities</h3>
+                <p>By using RovoAPI, you agree to:</p>
+                <ul>
+                    <li>Use the service in compliance with all applicable laws and regulations</li>
+                    <li>Not abuse, exploit, or overload the service</li>
+                    <li>Not resell or redistribute API access to third parties</li>
+                    <li>Keep your API credentials secure and confidential</li>
+                    <li>Report any unauthorized use immediately</li>
+                </ul>
+
+                <h3>Service Level</h3>
+                <p>RovoAPI is provided "as is" and "as available." While we strive for maximum uptime and reliability, we do not guarantee uninterrupted availability. Service availability may vary, and scheduled maintenance windows will be communicated when possible.</p>
+
+                <h3>Billing and Payments</h3>
+                <p>Pro plan subscriptions are billed monthly at $9.9/month or annually at $99/year. Early Access users lock in their promotional pricing for the duration of their subscription. All fees are non-refundable except as required by applicable law.</p>
+
+                <h3>Intellectual Property</h3>
+                <p>RovoAPI and all associated brand elements, logos, and technology are the exclusive property of RovoAPI. You receive a limited, non-exclusive license to use our service; no ownership rights are transferred.</p>
+
+                <h3>Termination</h3>
+                <p>We reserve the right to suspend or terminate accounts that violate these terms, engage in prohibited activities, or pose security risks to our platform.</p>
+
+                <h3>Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, RovoAPI's total liability shall not exceed the amount you have paid for the service in the twelve (12) months preceding the claim.</p>
+
+                <h3>Contact Us</h3>
+                <p class="contact-info">For questions about these terms, contact us at <a href="mailto:support@rovoapi.com">support@rovoapi.com</a></p>
+
+                <p class="effective-date">Effective Date: May 2026</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
@@ -517,12 +798,41 @@
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#status') return; // Skip for #status placeholder
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnOverlay(event, modalId) {
+            if (event.target.id === modalId) {
+                closeModal(modalId);
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
         });
     </script>
 </body>
